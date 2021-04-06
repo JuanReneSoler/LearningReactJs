@@ -34,15 +34,10 @@ class ToggleClock extends React.Component
 
     render()
     {
-        let clockDate = null;
-        let clockTime = null;
-        if(this.state.showDate)
-            clockDate = <Clock type="date"/>
-        if(this.state.showTime)
-            clockTime = <Clock type="time"/>
         return (
             <div>
-                {clockDate} {clockTime}
+                {this.state.showDate && <Clock type="date" />} 
+                {this.state.showTime && <Clock type="time" />}
                 <Toggle toggleConfiguration={{
                     defaultShowDate:this.state.showDate,
                     defaultShowTime:this.state.showTime,
