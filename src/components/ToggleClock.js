@@ -22,37 +22,33 @@ class ToggleClock extends React.Component
         this.state = {showDate:true, showTime:true}
     }
 
-    toggleDate()
+    toggleDate = ()=>
     {
         this.setState({showDate:!this.state.showDate});
     }
 
-    toggleTime()
+    toggleTime = ()=>
     {
         this.setState({showTime:!this.state.showTime});
     }
 
     render()
     {
-        let _format = "";
+        let clockDate = null;
+        let clockTime = null;
         if(this.state.showDate)
-            _format += " date ";
+            clockDate = <Clock type="date"/>
         if(this.state.showTime)
-            _format += " time ";
-
-        _format = _format.trim();
-
-        let _toggleConfiguration={
-            defaultShowDate:this.state.showDate,
-            defaultShowTime:this.state.showTime,
-            onToggleDate:()=>this.toggleDate(),
-            onToggleTime:()=>this.toggleTime()
-        }
-
+            clockTime = <Clock type="time"/>
         return (
             <div>
-                <Clock format={_format} />
-                <Toggle toggleConfiguration={_toggleConfiguration} />
+                {clockDate} {clockTime}
+                <Toggle toggleConfiguration={{
+                    defaultShowDate:this.state.showDate,
+                    defaultShowTime:this.state.showTime,
+                    onToggleDate:this.toggleDate,
+                    onToggleTime:this.toggleTime
+                }} />
             </div>
         );
     }
