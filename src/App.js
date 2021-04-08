@@ -1,23 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-//import ToggleClock from "./components/ToggleClock";
-//import NumbersList from "./components/NumbersList";
-import Blog from "./components/Blog";
+import Main from "./components/Main";
 
 function App() {
-
-  var posts = [
-    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-    {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-  ]
-
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <label>
-          <Blog posts={posts} />
-        </label>
+        <Main />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

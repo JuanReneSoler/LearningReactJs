@@ -1,24 +1,38 @@
 import React from "react";
-import { List, ListItem } from "./NumbersList";
+
+function SideBar(props)
+{
+    return(
+        <ul>{
+            props.items.map((item, index)=>{
+                return (<li key={index}>{item}</li>);
+            })
+        }</ul>
+    );
+}
+
+function Posts(props)
+{
+    return(
+        <ul>{
+            props.posts.map((post, index)=>{
+                return (
+                    <li key={index}>
+                        <div><h3>{post.title}</h3><p>{post.content}</p></div>
+                    </li>
+                );
+            })
+        }</ul>
+    );
+}
 
 function Blog(props)
 {
-    var content = props.posts.map((post, index)=>{
-        var item = <div><h3>{post.title}</h3><p>{post.content}</p></div>
-        return (
-            <ListItem key={index} content={item} />
-        );
-    });
-    
-    var sidebar = props.posts.map((post, index)=>{
-        return (<ListItem key={index} content={post.title} />);
-    });
-    
     return(
         <div>
-            <List items={sidebar} />
+            <SideBar items={props.posts.map(x=>x.title)} />
             <hr />
-            <List items={content} />
+            <Posts posts={props.posts} />
         </div>
     );
 }
