@@ -22,7 +22,7 @@ export default class NameForm extends React.Component{
         return(
             <form onSubmit={this.handleSubmit.bind(this)}>
                 <label>Text: </label>
-                <input type="text" onChange={this.handleChange.bind(this)} />
+                <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
                 <button type="submit">Submit</button>
             </form>
         );

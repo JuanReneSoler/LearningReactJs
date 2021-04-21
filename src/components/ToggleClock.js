@@ -1,19 +1,6 @@
 import React from "react";
 import Clock from "./Clock";
 
-function Toggle(props){
-    return (
-        <div>
-            <input onChange={props.toggleConfiguration.onToggleDate} 
-            type="checkbox" 
-            checked={props.toggleConfiguration.defaultShowDate} />Date
-            <input 
-            onChange={props.toggleConfiguration.onToggleTime} 
-            type="checkbox" 
-            checked={props.toggleConfiguration.defaultShowTime} />Time
-        </div>);
-}
-
 class ToggleClock extends React.Component
 {
     constructor(props)
@@ -37,12 +24,15 @@ class ToggleClock extends React.Component
                 {this.state.showDate && <Clock type="date" />}
                 {(this.state.showDate && this.state.showTime) && "||"}
                 {this.state.showTime && <Clock type="time" />}
-                <Toggle toggleConfiguration={{
-                    defaultShowDate:this.state.showDate,
-                    defaultShowTime:this.state.showTime,
-                    onToggleDate:this.toggleDate.bind(this),
-                    onToggleTime:this.toggleTime.bind(this)
-                }} />
+                <div>
+                    <input onChange={this.toggleDate.bind(this)} 
+                        type="checkbox" 
+                        checked={this.state.showDate} />Date
+                    <input 
+                        onChange={this.toggleTime.bind(this)} 
+                        type="checkbox" 
+                        checked={this.state.showTime} />Time
+                </div>
             </div>
         );
     }

@@ -26,7 +26,9 @@ class Clock extends React.Component{
 
     render()
     {
-        var result = "Invalid Type";
+        var result = 
+            `${this.state.date.toLocaleDateString()} 
+            ${this.state.date.toLocaleTimeString()}`;
         if(this.props.type === "date")
             result = this.state.date.toLocaleDateString();
         if(this.props.type === "time")

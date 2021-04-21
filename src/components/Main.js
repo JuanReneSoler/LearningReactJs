@@ -19,19 +19,21 @@ export default class Main extends React.Component
 
     render()
     {
-        var posts=[
-            {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-            {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-        ];
-
-
         return(
             <div>
                 <div>
-                    <input onChange={this.handleChange.bind(this, 1)} type="radio" checked={true} />Ejercicio 1 ||
-                    <input onChange={this.handleChange.bind(this, 2)} type="radio" />Ejercicio 2 ||
-                    <input onChange={this.handleChange.bind(this, 3)} type="radio" />Ejercicio 3 ||
-                    <input onChange={this.handleChange.bind(this, 4)} type="radio" />Ejercicio 4 ||
+                    <input 
+                        onChange={this.handleChange.bind(this, 1)} 
+                        type="checkbox" checked={this.state.exercise === 1} />Ejercicio 1 ||
+                    <input 
+                        onChange={this.handleChange.bind(this, 2)} 
+                        type="checkbox" checked={this.state.exercise === 2} />Ejercicio 2 ||
+                    <input 
+                        onChange={this.handleChange.bind(this, 3)} 
+                        type="checkbox" checked={this.state.exercise === 3} />Ejercicio 3 ||
+                    <input 
+                        onChange={this.handleChange.bind(this, 4)} 
+                        type="checkbox" checked={this.state.exercise === 4} />Ejercicio 4
                 </div>
                 {
                     this.state.exercise === 1 && 
@@ -51,7 +53,12 @@ export default class Main extends React.Component
                     this.state.exercise === 3 &&
                     <div>
                         <h1>Ejercicio 3</h1>
-                        <Blog posts={posts} />
+                        <Blog posts={
+                            [
+                                {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+                                {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+                            ]
+                        } />
                     </div>
                 }
                 {
