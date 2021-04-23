@@ -3,6 +3,7 @@ import ToggleClock from "./ToggleClock";
 import NumbersList from "./NumbersList";
 import Blog from "./Blog";
 import NameForm from "./NameForm";
+import TemperatureCalculator from "./TemperatureCalculator";
 
 export default class Main extends React.Component
 {
@@ -33,7 +34,10 @@ export default class Main extends React.Component
                         type="checkbox" checked={this.state.exercise === 3} />Ejercicio 3 ||
                     <input 
                         onChange={this.handleChange.bind(this, 4)} 
-                        type="checkbox" checked={this.state.exercise === 4} />Ejercicio 4
+                        type="checkbox" checked={this.state.exercise === 4} />Ejercicio 4 ||
+                    <input
+                        onChange={this.handleChange.bind(this, 5)}
+                        type="checkbox" checked={this.state.exercise === 5} /> Ejercicio 5
                 </div>
                 {
                     this.state.exercise === 1 && 
@@ -66,6 +70,13 @@ export default class Main extends React.Component
                     <div>
                         <h1>Ejercicio 4</h1>
                         <NameForm />
+                    </div>
+                }
+                {
+                    this.state.exercise === 5 &&
+                    <div>
+                        <h1>Ejercicio 5</h1>
+                        <TemperatureCalculator />
                     </div>
                 }
             </div>
