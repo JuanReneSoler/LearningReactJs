@@ -1,0 +1,8 @@
+https://es.reactjs.org/docs/getting-started.html
+https://es.reactjs.org/tutorial/tutorial.html
+https://formik.org/
+https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318
+https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_objects/Function/bind
+https://www.w3.org/TR/DOM-Level-3-Events/
+https://softwarecrafters.io/react/arquitectura-hexagonal-frontend
